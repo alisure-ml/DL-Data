@@ -8,6 +8,7 @@
 #### 2. TF实现图像预处理
 
 #### 3. 多线程输入数据处理框架
+ ![](tensorflow/data_input.jpg)
  * 为了避免图像预处理成为神经网络模型训练效率的瓶颈，
  TensorFlow提供了一套多线程处理输入数据的框架。处理流程如下：
     1. 指定原始数据的文件列表
@@ -15,8 +16,6 @@
     3. 从文件中读取数据
     4. 数据预处理
     5. 整理成批次作为网络输入
- 
- ![](tensorflow/data_input.jpg)
  
  * 队列 `FIFOQueue` 和 `RandomShuffleQueue`
  * 输入文件队列 `string_input_producer`
