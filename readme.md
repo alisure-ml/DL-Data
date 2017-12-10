@@ -4,7 +4,22 @@
 ### tensorflow 相关
 > 在 `tensorflow` 文件夹中
 #### 1. TFRecord输入数据格式
-    
+ * 通过tf.train.Example Protocol Buffer格式存储。  
+   [example.proto](https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/core/example/example.proto)
+   [feature.proto](https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/core/example/feature.proto)
+  
+ * 按照存储结构，解析数据（详见代码 `my_0_tfrecord.py`）:
+    ```
+    tf.train.Example(features=tf.train.Features(feature={
+            "image": tf.train.Feature(bytes_list=tf.train.BytesList(value=[image]))
+        })
+    )
+    ```
+    ```
+    tf.parse_single_example(example, features={
+        "image": tf.FixedLenFeature([], tf.string)
+    })
+    ```
 #### 2. TF实现图像预处理
 
 #### 3. 多线程输入数据处理框架
@@ -30,4 +45,4 @@
  
     * 通过这种方式，可以有效地提高数据预处理的效率，避免数据预处理成为整个神经网络模型训练过程中的瓶颈。
  
- 
+### 
