@@ -4,7 +4,7 @@
 ### tensorflow 相关
 > 在 `tensorflow` 文件夹中
 #### 1. TFRecord输入数据格式
- * 通过tf.train.Example Protocol Buffer格式存储。  
+ * 通过tf.train.Example Protocol Buffer格式存储:  
    [example.proto](https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/core/example/example.proto)
    [feature.proto](https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/core/example/feature.proto)
   
@@ -21,6 +21,26 @@
     })
     ```
 #### 2. TF实现图像预处理
+> 详情见代码 `my_5_data_process.py`
+ * 调整图片大小
+    - 插值
+    - 裁剪
+    - 缩放
+    - 填充
+ 
+ * 图片翻转
+    - 上下翻转
+    - 左右翻转
+    - 转置
+ 
+ * 色彩调整
+    - 亮度
+    - 对比度
+    - 色相
+    - 饱和度
+ 
+ * 标准化
+    - 减均值/除方差
 
 #### 3. 多线程输入数据处理框架
  ![](tensorflow/data_input.jpg)
